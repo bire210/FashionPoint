@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 100%;
+        }
+        #container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 3%;
+            margin-left:5%;
+            margin-top: 5%;
+            margin-right: 3%;
+        }
+        #container>div{
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            text-align: center;
+        }
+        button:hover{
+            cursor: pointer;
+        }
+        img:hover{
+            cursor: pointer;
+        }
+         div>div>button{
+            background-color: antiquewhite;
+            border: 0ch;
+        }
+    </style>
+</head>
+<body>
+    <select onchange="submit()" name="Featured" id="filter">
+        <option value="0">Featured</option>
+        <option value="1">Price:High to Low</option>
+        <option value="2">Price:Low to High</option>
+        <option value="3">A-Z</option>
+        <option value="4">Z-A</option>
+    </select>
+    <div id="pagination">
+    </div>
+<div id="container">
+</div>    
+</body>
+</html>
+<script src="clothing.js"></script>
