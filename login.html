@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+</head>
+<style>
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+    
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+ 
+  }
+  .big{
+   font-size: 25px;  
+}
+.PopUp{
+ position: absolute;
+  width:30%;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  top: -150%;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(1.05);
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  transition:top 0ms ease-in-out 200ms,
+              opacity 200ms ease-in-out 0ms,
+             transform 20ms ease-in-out 00ms;
+}
+.PopUp.active{
+top:50%;
+left: 50%;
+transform: translate(-50%,-50%) scale(1);
+transition:top 0ms ease-in-out 200ms,
+              opacity 200ms ease-in-out 0ms,
+             transform 20ms ease-in-out 00ms;
+
+}
+p{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+#email{
+  width: 85%;
+  padding: 12px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 20px;
+  color: gray;
+}
+
+.hov{
+  padding: 2px;
+  padding-left: 3px;
+  padding-right: 3px;
+  border-radius: 50%;
+  border: 1px solid green;
+  color: green;
+}
+.closebutton{
+  margin-left: 100%;
+  color: gray;
+}
+.submit{
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 12px;
+  font-size: 16px;
+  color: gray;
+}
+.mobilenumber{
+  width: 100%;
+  margin-bottom: 25px;
+  padding: 12px;
+  font-size: 20px;
+  color: gray;
+}
+.create_accnt{
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 12px;
+  font-size: 16px;
+  color: gray;
+}
+a{
+  color: gray;
+  font-size: 17px;
+  text-decoration: none;
+}
+
+</style>
+<body>
+    <div
+    class="signinup">
+<button class="signup">SignUp</button>
+</div>
+    <div class="PopUp">
+        <div class="closebutton">X</div>
+        <form action="">
+     <div class="form">
+        <p class="big">Sign IN</p>
+        <hr>
+        <p>Sign in so you can save items to your wishlists, track your orders, and check out faster!</p>
+        <div class="form-element"></div>
+        <label for="">Email*</label>
+        <br>
+        <input type="email" id="email" placeholder="Enter email">
+     </div>
+      <input type="checkbox">
+      <label for="">keep me signed in <span class="animate"><button class="hov">i</button></span></label>
+      
+      <div>
+      <button class="submit">NEXT</button>
+    </div>
+      <button class="mobilenumber">
+        <a href="mobile.html">USE MOBILE NUMBER INSTEAD</a>
+        </button>
+      <hr>
+      <p class="big">Sign UP</p>
+      <p>Welcome! It's quick and easy to set up an account</p>
+      <button class="create_accnt">
+        <a href="Sign-up.html">Create An Account</a>
+      </button>
+      
+    </form>
+    </div>
+
+</body>
+</html>
+<script>
+ 
+ document.querySelector(".signup").addEventListener("click",function (){
+  document.querySelector(".PopUp").classList.add("active")
+ })
+ document.querySelector(".PopUp .closebutton").addEventListener("click",function (){
+  document.querySelector(".PopUp").classList.remove("active")
+ })
+</script>
