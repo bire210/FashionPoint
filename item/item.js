@@ -16,6 +16,10 @@ function display(array){
         let div=document.createElement("div");
         let img=document.createElement("img");
         img.setAttribute("src",element.images[1]);
+        img.addEventListener("click",function(){
+            window.location.href="product.html";
+            add_product(element.title,element);
+        })
         let title=document.createElement("h4");
         title.innerText=element.title;
         let price=document.createElement("h4");
@@ -24,6 +28,10 @@ function display(array){
         desc.innerText=element.description;
         let btn=document.createElement("button");
         btn.innerText="Add to Cart";
+        btn.addEventListener("click",function(){
+            alert("Item added to liked items");
+            add_data("added_item",element);
+        })
         div.append(img,title,price,btn,desc);
         document.getElementById("container").append(div);
     });
@@ -93,5 +101,20 @@ function submit(){
        }
     })
 }
-
-
+function search() {
+    let value = document.querySelector("input").value;
+    let filterdata = data.filter(function (element) {
+        return element.name.toLowerCase().includes(value.toLocaleLowerCase());
+    })
+    display(filterdata);
+}
+function add_data(key,values){
+    let new_data=JSON.parse(localStorage.getItem(key))||[];
+    new_data.push(values);
+    localStorage.setItem(key,JSON.stringify(new_data));
+}
+function add_product(key,values){
+    let new_data=JSON.parse(localStorage.getItem(key))||[];
+    new_data.push(values);
+    localStorage.setItem(key,JSON.stringify(new_data));
+}

@@ -1,0 +1,185 @@
+#getemail {
+    width: 90%;
+    margin: 20px auto;
+}
+
+#emailuperr {
+
+    display: flex;
+}
+
+.emailchild {
+    padding: 5px 0px;
+    width: 50%;
+}
+
+.emailchild input[type="email"] {
+    width: 60%;
+    font-size: 30px;
+}
+
+.emailchild input[type="submit"] {
+    font-size: 30px;
+    margin: 0px 20px;
+    background: green;
+    color: white;
+}
+#emaillower{
+    margin-right: 30px;
+}
+.hover-underline a:link {
+    text-decoration: none;
+}
+
+.hover-underline a:visited {
+    text-decoration: none;
+}
+
+.hover-underline a:hover {
+    text-decoration: underline;
+}
+
+.hover-underline a:active {
+    text-decoration: underline;
+}
+
+#footer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 20px 40px;
+}
+
+.footerChild {
+    margin: 2px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.heading {
+
+    color: #0087ca;
+}
+
+.hover-underline img {
+    height: 20px;
+    margin-top: 2px;
+}
+
+#logoOfSocial {
+    display: flex;
+    justify-content: center;
+}
+
+#logoOfSocial img {
+    height: 30px;
+}
+
+.socialLog {
+    margin: 10px;
+}
+
+#holiday {
+    background-color: #0087ca;
+    width: 90%;
+    margin: 20px auto;
+
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.holidayContent {
+    width: 30%;
+    height: 100%;
+
+    text-align: center;
+    color: white;
+}
+
+.holidayContent h4 {
+    background-color: aqua;
+    width: 50%;
+    margin: 30px auto;
+    font-size: 15px;
+}
+
+
+
+
+/* meidum screens */
+@media all and (min-width: 768px) and (max-width: 1024px) {
+    #footer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 40px;
+    }
+
+    #emailuperr {
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .emailchild {
+        padding: 5px 0px;
+        width: 90%;
+    }
+
+    #holiday {
+        background-color: #0087ca;
+        width: 90%;
+        margin: 20px auto;
+
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .holidayContent {
+        width: 90%;
+        height: 100%;
+
+        text-align: center;
+        color: white;
+    }
+}
+
+/* small screens */
+@media all and (min-width: 220px) and (max-width: 767px) {
+    #footer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 40px;
+    }
+
+    #emailuperr {
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .emailchild {
+        padding: 5px 0px;
+        width: 100%;
+    }
+
+    #holiday {
+        background-color: #0087ca;
+        width: 90%;
+        margin: 20px auto;
+
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .holidayContent {
+        width: 90%;
+        height: 100%;
+
+        text-align: center;
+        color: white;
+    }
+}
