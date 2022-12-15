@@ -5,6 +5,74 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="footer.css">
+    <script src="https://kit.fontawesome.com/112d8dab0c.js" crossorigin="anonymous"></script>
+   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Economica&family=Neonderthaw&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Economica&family=Neonderthaw&family=Tapestry&display=swap" rel="stylesheet">
+</head>
+<body>
+ <header><div id="navbar_main" >
+   <div id="first_div">
+       <div class="child_main">
+           <div class="child_1">
+           <i>celebrate more.sparkle with joy.reflect often</i>
+           </div>
+           <div class="child_2">
+               <h5>NEW YEARS RESOLUTIONS</h5>
+               </div>
+               <div class="child_1">
+                   <U>shop the new collection</U>
+               </div>
+       </div>
+   </div>
+   <div id="second_div">
+   <div class="second_div_child" >
+       <div class="language">
+           <i class="fa-solid fa-globe"></i>
+           English($) <i class="fa-solid fa-chevron-down"></i>
+       </div>
+       <div class="LOGIN"> <a href="####"></a>
+           <i class="fa-regular fa-user"></i>
+           Login/Signup
+       </div>
+     </div> 
+   </div>
+   <div id="third_main">
+       <div class="main-child">
+           <div class="third-Chiild_1">
+               <div>
+                   Fashion_Point
+               </div>
+               <div>
+                   Fashion_Home
+               </div>
+   
+           </div>
+           <div class="third-child-2">
+               <div>
+                   <input type="text" placeholder="Search Fashion item" id="input" >
+               </div>
+               <div class="Cart_item">
+                   <i class="fa-solid fa-bag-shopping"></i>
+                   <a href="">cart</a>
+               </div>
+           </div>
+       </div>
+   </div>
+   <hr>
+   <div id="Last-div" >
+       <a href="#" id="gift" class="Title"> Gifts</a>
+       <a href="#" class="Title">New!</a>
+       <a href="#"  class="Title">Dresses</a>
+       <a href="#" class="Title">Clothing</a>
+       <a href="#" class="Title">Accesories</a>
+       <a href="#" class="Title">BHLND Wedding</a>
+       <a href="#" class="Title">Homes & Furniture</a>
+       <a href="#" class="Title">Beauty & Wellness</a>
+       <a href="#" class="Title">Golden & Outdoor</a>
+       <a href="#" class="Title">Sale</a>
+   </div>
     <style>
         img{
             width: 100%;
@@ -16,6 +84,7 @@
             margin-left:5%;
             margin-top: 5%;
             margin-right: 3%;
+            margin-bottom: 25%;
         }
         #container>div{
             box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
@@ -31,20 +100,129 @@
             background-color: antiquewhite;
             border: 0ch;
         }
+        #nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1%;
+            background-color: antiquewhite;
+        }
     </style>
 </head>
 <body>
-    <select onchange="submit()" name="Featured" id="filter">
-        <option value="0">Featured</option>
-        <option value="1">Price:High to Low</option>
-        <option value="2">Price:Low to High</option>
-        <option value="3">A-Z</option>
-        <option value="4">Z-A</option>
-    </select>
-    <div id="pagination">
+    <div id="nav">
+        <select onchange="submit()" name="Featured" id="filter">
+            <option value="0">Featured</option>
+            <option value="1">Price:High to Low</option>
+            <option value="2">Price:Low to High</option>
+            <option value="3">A-Z</option>
+            <option value="4">Z-A</option>
+        </select>
+        <div id="pagination">
+        </div>
     </div>
 <div id="container">
-</div>    
+</div> 
+
+<div  id="getemail"> 
+    <div id="emailuperr">
+      <div  class="emailchild">
+        <h3>  Sign Up for Email</h3>
+        <p> Receive early access to new arrivals, sales, exclusive          content, events and much more!</p>
+      </div>
+      <div  class="emailchild">
+        <form>
+          <br>
+          <label for="email">Email Address*</label><br>
+        <input type="email" id="sendemail" name="sendemail" value="">
+       <input type="submit" value="Submit">
+        
+        </form>
+         
+      </div>
+    </div>
+    <div id="emaillower">
+      By signing up, you will receive Anthropologie offers, promotions and other commercial messages. You are also agreeing to Anthropologie’s <a href="" >Privacy Policy</a>. You may unsubscribe at any time.
+    </div>
+  
+  </div>
+<div id="footer">
+    <div class="footerChild">
+    <h4 class="heading">Help</h4>
+      <p class="hover-underline"><a href="" target="_nothing" >Track Your Order</a></p>
+     <p class="hover-underline"><a href="" target="_nothing" >Start A Return Or Exchange (US)</a></p>
+     
+     <p class="hover-underline"><a href="" target="_nothing" >Returns & Exchanges</a></p>
+     <p class="hover-underline"><a href="" target="_nothing" >Shipping</a></p>
+    <p class="hover-underline"><a href="" target="_nothing" >Customer Service</a></p>
+    <p class="hover-underline"><a href="" target="_nothing" >Current Promotions</a></p>
+      <p class="hover-underline"><a href="" target="_nothing" >Product Recalls</a></p>
+    
+    
+  </div>
+  <div class="footerChild">
+    <h4 class="heading">About Us</h4>
+    <p class="hover-underline"><a href="" target="_nothing" >Our Story</a></p>
+     <p class="hover-underline"><a href="" target="_nothing" >Events</a></p>
+     
+     <p class="hover-underline"><a href="" target="_nothing" >A Greater Good</a></p>
+     
+    <p class="hover-underline"><a href="" target="_nothing" >Diversity & Inclusion</a></p>
+    <p class="hover-underline"><a href="" target="_nothing" >Stories</a></p>
+    
+  </div>
+  <div class="footerChild">
+    <h4 class="heading">Services</h4>
+    <p class="hover-underline"><a href="" target="_nothing" >Anthro Perks</a></p>
+     <p class="hover-underline"><a href="" target="_nothing" >Gift Cards</a></p>
+     
+     <p class="hover-underline"><a href="" target="_nothing" >AnthroLiving Designer & Trade Program</a></p>
+     <p class="hover-underline"><a href="" target="_nothing" >Furniture: Guides & Services</a></p>
+    <p class="hover-underline"><a href="" target="_nothing" >Store Pickup & Collection Points</a></p>
+    <p class="hover-underline"><a href="" target="_nothing" >Klarna</a></p>
+    
+    
+  </div>
+  <div class="footerChild">
+    <h4 class="heading">Connect</h4>
+     <p class="hover-underline"><a href="" target="_nothing" >Contact Us</a></p>
+     <p class="hover-underline"><a href="" target="_nothing" >Stay Connected</a></p>
+     <p class="hover-underline"><a href="" target="_nothing" >Careers</a></p>
+     <p class="hover-underline"><a href="" target="_nothing" >Styling Services</a></p>
+     <p class="hover-underline"><a href="" target="_nothing" >Request A Catalog</a></p>
+    
+   
+  </div>
+   <div class="footerChild">
+   <p class="hover-underline"><img src="https://img.icons8.com/ios-filled/2x/google-maps-new.png" alt="hi" /><a href="" target="_nothing" >Store Locator</a></p>
+     <p class="hover-underline"><img src="https://img.icons8.com/fluency/2x/apple-mail.png" alt="hi" /><a href="" target="_nothing" >Get Email</a></p>
+  </div>
+  
+</div>
+<div  id="logoOfSocial">
+   <div class="socialLog"> <img src="https://seeklogo.com/images/A/available-on-the-app-store-logo-62D9C35CE7-seeklogo.com.png" alt="hi" /> </div>
+  <div class="socialLog"> <img src="https://www.freepnglogos.com/uploads/pinterest-logo-emblem-png-11.png" alt="hi" /> </div>
+  <div class="socialLog"><img src="https://img.icons8.com/color/2x/instagram-new.png" alt="hi" />  </div>
+  <div class="socialLog"> <img src="https://img.icons8.com/color/2x/facebook.png" alt="hi" /> </div>
+  <div class="socialLog"> <img src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/2x/external-twitter-an-american-online-news-and-social-networking-service-logo-shadow-tal-revivo.png" alt="hi" /> </div>
+  
+</div>
+
+<div id="holiday">
+    <div class="holidayContent">
+      <p>~ visit ~</p>
+      <H3>THE HOLIDAY SHOP</H3>
+    </div>
+    <div class="holidayContent">
+
+      <p>Your destination for gift,</p>
+      <p>inspiration,Services ,styling & more!</p>
+    </div>
+    <div class="holidayContent">
+      <h4>LET'S GO GIFTING</h4>
+    </div>
+  
+</div>   
 </body>
 </html>
 <script src="item.js"></script>
