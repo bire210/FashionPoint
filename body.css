@@ -36,7 +36,7 @@
     right: 10px;
     border-radius: 6px 0 0 6px;
   }
-  
+
   #explore{
     width: 90%;
     margin: 40px auto;
@@ -125,3 +125,351 @@ text-align: center;
         width: 100%;
     }
 }
+
+/* --------vikas day3 css----- */
+
+        
+#wow{
+text-align: center;
+color:grey;
+}
+
+
+
+    #container1{
+        /* border:1px solid black; */
+        width : 73%;
+        margin:auto;
+        /* height: 920px; */
+        display:grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: auto;
+        gap : 10px;
+    }
+    #container1>div>img{
+     width:100%;
+    }
+  
+   
+
+    #container1>div{
+/*         
+        border : 1px solid red; */
+     
+        margin-top: 0px;
+    }
+
+    #container2{
+        /* border:1px solid red; */
+        width : 73%;
+        margin:auto;
+        /* height: 1350px; */
+        display:grid;
+        gap : 10px;
+        margin-top: 10px;
+    }
+
+    #container2>div{
+        /* border:1px solid black; */
+        width:100%;
+        /* height:200px; */
+        display:grid;
+        justify-content: center;
+        /* align-items: center; */
+    }
+
+   #container2>div>img{
+    width:100%;
+   }
+   
+   #container2>div>button{
+    margin: auto;
+    background-color: white;
+    color:black;
+    border:1px solid black;
+    margin-top: -5%;
+    font-size: 10px;
+    font-style: italic;
+   }
+
+ 
+ 
+  #container3{
+        /* border:5px solid green; */
+        width : 73%;
+        margin:auto;
+        /* height: 1350px; */
+        display:flex;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: auto; 
+        gap : 10px;
+        margin-top: 10px;
+    }
+
+    #container3>div{
+        /* border:1px solid black; */
+        width:30%;
+        /* height:200px; */
+        display:grid;
+        justify-content: center;
+        margin:auto;
+        /* align-items: center; */
+    }
+
+   #container3>div>img{
+    width:100%;
+   }
+   
+   #container3>div>button{
+    margin: auto;
+    background-color: white;
+    color:black;
+    border:1px solid black;
+    margin-top: -10%;
+    font-size: 10px;
+    font-style: italic;
+   }
+  
+/* 
+   --------------------------------------- */
+
+   #container6{
+        /* border:5px solid green; */
+        width : 73%;
+        margin:auto;
+        /* height: 1350px; */
+        display:flex;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: auto; 
+        gap : 10px;
+        margin-top: 10px;
+    }
+
+    #container6>div{
+        /* border:1px solid black; */
+        width:30%;
+        /* height:200px; */
+        display:grid;
+        justify-content: center;
+        margin:auto;
+        /* align-items: center; */
+        margin-top: 10px;
+    }
+
+   #container6>div>img{
+    width:100%;
+    height:320px;
+   }
+   
+   /* #container3>div>p{
+    margin: auto;
+    background-color: white;
+    color:black;
+    border:1px solid black;
+    margin-top: -10%;
+    font-size: 10px;
+    font-style: italic;
+   }
+   */
+
+
+   /* MEDIA QUERIES */
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+    #container1{
+        /* border:1px solid black; */
+        width : 73%;
+        margin:auto;
+        /* height: 920px; */
+        display:grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: auto;
+        gap : 10px;
+    }
+   
+    
+    #container2{
+        /* border:1px solid red; */
+        width : 73%;
+        margin:auto;
+        /* height: 1350px; */
+        display:grid;
+        gap : 10px;
+        margin-top: 10px;
+    }
+
+    
+
+
+   #container3{
+    /* border:1px solid black; */
+        width : 73%;
+        margin:auto;
+        /* height: 920px; */
+        display:grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: auto;
+        gap : 10px;
+        margin-top: 10px;
+    }
+
+    #container3>div{
+    display: grid;
+
+   }
+
+   #container6{
+        border:5px solid green;
+        width : 73%;
+        margin:auto;
+        /* height: 1350px; */
+        display:flex;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: auto; 
+        gap : 10px;
+        margin-top: 10px;
+    }
+
+   
+}
+
+@media all and (min-width: 220px) and (max-width: 767px) {
+    #container1{
+        /* border:1px solid black; */
+        width : 73%;
+        margin:auto;
+        /* height: 920px; */
+        display:grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: auto;
+        gap : 10px;
+    }
+   
+    #container3>div{
+    display: grid;
+    
+   }
+    #container2{
+        /* border:1px solid red; */
+        width : 73%;
+        margin:auto;
+        /* height: 1350px; */
+        display:grid;
+        gap : 10px;
+        margin-top: 10px;
+    }
+
+   
+   
+
+   #container3{
+    /* border:1px solid black; */
+        width : 73%;
+        margin:auto;
+        /* height: 920px; */
+        display:grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: auto;
+        gap : 10px;
+        margin-top: 10px;
+    }
+
+}
+
+/* -----------------vikas day3------- */
+
+
+.io{
+    color:rgb(47, 30, 30);
+    margin-left: 62px;
+}
+
+.we{
+    border: 1px solid rgb(72, 44, 44);
+    margin-bottom: 30px;
+    width:90%;
+    margin-left: 62px;
+
+}
+
+.container>button{
+    height:20%;
+    display:flex;
+    /* margin-left: 50px; */
+    position: absolute;
+    
+    background-color: transparent;
+    margin-top: -115%;
+    justify-content: center;
+    align-items: center;
+}
+
+.container>button:hover{
+    color:white;
+    border-color: white;
+}
+
+#boom>button{
+    background-color: transparent;
+    margin-left: 86%;
+
+}
+  
+#boom>button:hover{
+    color:white;
+    border-color: white;
+}
+
+    #bada_container{
+    display: flex;
+    gap:10px;
+    align-items: center;
+    /* position :relative; */
+    width: 90%;
+    margin: auto;
+    /* border:5px solid red; */
+    
+    }
+
+
+.container {
+  position: relative;
+  width: 50%;
+  background-color: white;
+  /* border:1px solid red; */
+
+  text-align: center;
+  /* padding : 25px; */
+}
+
+.image {
+  /* display: block; */
+  width: 100%;
+  height: auto;
+  
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+ 
+}
+
+.container:hover .overlay {
+  opacity: 5;
+}
+
+.text {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+    
