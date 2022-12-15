@@ -94,9 +94,4 @@ function submit(){
     })
 }
 
-let pay_btns=document.querySelectorAll("button");
-for(let pay_btn of pay_btns){
-    pay_btn.addEventListener('click',(e)=>{
-        console.log("jai jai shri ram ")
-    })
-}
+
