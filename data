@@ -28,7 +28,7 @@
   padding: 10px;
   padding-left: 30px;
   padding-right: 30px;
-  top: -250%;
+  top: -150%;
   left: 50%;
   transform: translate(-50%,-50%) scale(1.05);
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
@@ -105,7 +105,7 @@ a{
   padding: 10px;
   padding-left: 30px;
   padding-right: 30px;
-  top:-850%;
+  top:-150%;
   left: 50%;
   transform: translate(-50%,-50%) scale(1.05);
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
@@ -121,7 +121,7 @@ transform: translate(-50%,-50%) scale(1);
               opacity 200ms ease-in-out 0ms,
              transform 20ms ease-in-out 00ms; */
 
-}#numb{
+}#number{
   width: 85%;
   padding: 12px;
   font-size: 16px;
@@ -145,10 +145,9 @@ position: absolute;
  padding: 10px;
  padding-left: 30px;
  padding-right: 30px;
- top:-300%;
- left: -140%;
+ top:-150%;
+ left: 50%;
  transform: translate(-50%,-50%) scale(1.05);
-
  overflow: auto;
  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }.Signup.active{
@@ -163,13 +162,6 @@ transform: translate(-50%,-50%) scale(1);
   font-size: 16px;
   color: gray;
 
-}#email1{
-    width: 85%;
-  padding: 12px;
-  font-size: 16px;
-  width: 100%;
-  margin-bottom: 20px;
-  color: gray;
 }
 </style>
 <body>
@@ -257,10 +249,10 @@ transform: translate(-50%,-50%) scale(1);
     <div class="form-element"></div>
     <label for="">Email*</label>
     <br>
-    <input type="email" id="email1" placeholder="Enter Email"  required>
+    <input type="email" id="email" placeholder="Enter Email"  required>
     <label for="">MOBILE NUMBER*</label>
     <br>
-    <input type="number" id="numb" placeholder="Enter Mobile" min="10" max="10" required>
+    <input type="number" id="number" placeholder="Enter Mobile" min="10" max="10" required>
  </div>
   <input type="checkbox">
   <label for="">keep me signed in <span class="animate"><button class="hov">i</button></span></label>
@@ -340,96 +332,7 @@ transform: translate(-50%,-50%) scale(1);
   
  })
 
- document.querySelector(".check .create_accnt").addEventListener("click",function (el){
-  el.preventDefault()
-  document.querySelector(".PopUp").classList.remove("active");
-  document.querySelector(".check").classList.remove("active");
-  document.querySelector(".Signup").classList.add("active");
 
-  
- })
+
  
-//click part POPUP 1st
-
-
-let k=document.querySelector("#email1");
-      let p=document.querySelector("#numb");
- document.querySelector(".Signup .submit").addEventListener("click",function(event){
-  event.preventDefault()
-     
-      console.log(p.value)
-let email=k.value;
-let number=p.value;
-      let obj={
-       email,
-       number
-      }
-      if(obj.email && obj.number){
-      let setdata=JSON.parse(localStorage.getItem("SignUPDATA"))||[];
-  setdata.push(obj);
-  localStorage.setItem("SignUPDATA",JSON.stringify(setdata));
-  alert("Signin-SUccessfull")
-      }
-      
- })
-
-//  async function onlyemail(obj){
-//   try{
-//       let res= await fet",{
-//         method:"POST",
-//         headers:{
-//           "content-type":"application/json"
-//         },
-//         body:JSON.stringify(obj)
-//       })
-
-//       console.log(res)
-//     } 
-//     catch(err){
-//       console.log("error")
-//     }
-//  }
-//login authentication
-
-let getmaindata=JSON.parse(localStorage.getItem("SignUPDATA"))
-let email=document.getElementById("email")
-document.querySelector(".PopUp .submit").addEventListener("click",function(event){
-  event.preventDefault()
-
-  getmaindata.forEach(element => {
-    if(element.email==email.value){
-      alert("SIGN IN SUCCESSFULL")
-
-    }else{
-      alert("Please Provide Valid Credentials")
-    }
-  });
-
-
-
-})
-
-
-//mobile authentication
-
-
-let mobile=document.querySelector("#number")
-document.querySelector(".check .submit").addEventListener("click",function(event){
-  event.preventDefault()
-console.log(mobile.value)
-  getmaindata.forEach(element => {
-    if(element.number==mobile.value){
-      alert("SIGN IN SUCCESSFULL")
-
-    }else{
-      alert("Please Provide Valid Credentials")
-    }
-  });
-
-})
-
-
-
-
-
 </script>
