@@ -1,0 +1,19 @@
+{
+  "name": "authenticate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "pratice.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bire210/spiky-plate-7313.git"
+  },
+  "author": "code stepbystep",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bire210/spiky-plate-7313/issues"
+  },
+  "homepage": "https://github.com/bire210/spiky-plate-7313#readme"
+}

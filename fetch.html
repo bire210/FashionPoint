@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  #heading {
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  table th {
+    color: rgb(11, 11, 11);
+    border: 1px solid rgb(7, 20, 68);
+    height: 70px;
+  }
+
+  table td {
+    border: 1px solid rgb(11, 11, 11);
+    background-color: aquamarine;
+  }
+
+  table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 90%;
+    margin: auto;
+    margin-top: 100px;
+    text-align: center;
+
+  }
+
+  .image {
+    width: 100%;
+    height: 100px;
+    border: 1px solid green;
+  }
+
+  #brand {
+    margin: 20px 40%;
+    width: 20%;
+    text-align: center;
+    font-size: 30px;
+    display: inline-block;
+  }
+
+
+
+  /* -------------------addd product section -----------------------------------------*/
+
+
+
+
+  .open-button {
+    background-color: #555;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    margin-top: 10px;
+    margin-left: 45%;
+
+  }
+
+ 
+  .form-popup {
+    height: 100vh;
+    width: 50%;
+    display: none;
+    margin: 20px auto;
+
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+  }
+
+ 
+  .form-container {
+    width: 90%;
+    padding: 10px;
+    background-color: white;
+  }
+
+  /* Full-width input fields */
+  .form-container input[type=number],
+  .form-container input[type=text] {
+    width: 100%;
+    font-size: 30px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+
+  .form-container .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+  }
+</style>
+
+<body>
+  <div id="headDiv">
+    <h1 id="heading">Product List</h1>
+    <select name="Brands" id="brand">
+      <option value="">Brands</option>
+      <option value="Zebronics">Zebronics</option>
+      <option value="Apple">Apple</option>
+      <option value="HP">HP</option>
+      <option value="Dell">Dell</option>
+    </select>
+  </div>
+  <div id="additem">
+    <button class="open-button" onclick="openForm()">Add New Item</button>
+
+    <div class="form-popup" id="myForm">
+      <form action="" class="form-container">
+        <h1>Fill Details of New Product</h1>
+
+        <label for="product_id"><b>Product Id</b></label>
+        <input type="number" placeholder="Product Id" name="Product Id" required>
+
+        <label for="psw"><b>Brand</b></label>
+        <input type="text" placeholder="Brand" name="Brand" required>
+
+
+        <label for="image"><b>Image _Url</b></label>
+        <input type="text" placeholder="Image Url" name="image" required>
+
+
+        <label for="product_price"><b>Price</b></label>
+        <input type="number" placeholder="Price" name="price" required>
+
+
+        <label for="title"><b>Title</b></label>
+        <input type="text" placeholder="Title" name="title" required>
+
+        <label for="category"><b>Category</b></label>
+        <input type="text" placeholder="Category" name="title" required>
+
+        <!-- <button type="submit" class="btn">Login</button> -->
+        <button type="button" class="btn cancel" onclick="closeForm()">Add</button>
+      </form>
+    </div>
+
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Product id</th>
+        <th>Brand</th>
+
+        <th>Image</th>
+        <th>Price</th>
+        <th>Title</th>
+        <th>category</th>
+        <th>In Stock</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <!-- append it -->
+    </tbody>
+  </table>
+</body>
+
+</html>
+<script>
+ 
+
+  let localdata = JSON.parse(localStorage.getItem("addtofilter")) || [];
+  async function data() {
+    try {
+      let res = await fetch("https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-tech-products")
+      let out = await res.json();
+      localdata = out.data;
+      console.log(localdata)
+      toDisplay(localdata)
+      //localdata.push(out.data);
+      localStorage.setItem("addtofilter", JSON.stringify(localdata))
+
+    }
+    catch (error) {
+      console.log("error");
+    }
+
+  }
+  
+ 
+
+  let body = document.querySelector("tbody")
+  function toDisplay(arr) {
+    body.innerHTML = "";
+    arr.map(el => {
+      //console.log(el.brand)
+
+      let tr = document.createElement("tr");
+
+
+      let id = document.createElement("td");
+      id.innerText = el.id;
+      let brand = document.createElement("td")
+      brand.innerText = el.brand;
+      let img = document.createElement("img");
+      img.setAttribute("src", el.img);
+      img.setAttribute("class", "image")
+      let price = document.createElement("td");
+      price.innerText = el.price;
+      let details = document.createElement("td")
+      details.innerText = el.details;
+      let category = document.createElement("td");
+      category.innerText = el.category
+      let add = document.createElement("td");
+      add.innerHTML = "YES";
+      add.style.background = "red"
+      add.addEventListener("click", function () {
+        addData("Addedtodash", el)
+      })
+      tr.append(id, brand, img, price, details, category, add);
+
+      body.append(tr);
+
+
+
+    });
+  }
+
+  function addData(key, value) {
+    let newData = JSON.parse(localStorage.getItem(key)) || [];
+    newData.push(value);
+    localStorage.setItem(key, JSON.stringify(newData))
+  }
+
+  let fil = document.querySelector("#brand")
+
+  fil.addEventListener("change", function () {
+    console.log(fil.value)
+    //console.log(localdata)
+    if (fil.value == "") {
+
+      toDisplay(localdata);
+    } else {
+      let filterdata = localdata.filter(function (el) {
+        return el.brand === fil.value
+      })
+      toDisplay(filterdata);
+    }
+  })
+
+
+
+
+
+  function openForm() {
+    document.getElementById("myForm").style.display = "block";
+    document.querySelector("table").style.display = "none";
+    document.querySelector("#headDiv").style.display = "none";
+    document.querySelector(".open-button").style.display = "none";
+  }
+
+  function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+    // document.querySelector("table").style.display="block";
+    // document.querySelector("table").style.width="1080"
+    
+    //  document.querySelector("#headDiv").style.display="block";
+
+    let ProductData=document.querySelectorAll(".form-container input");
+   let obj={};
+   obj["id"]=ProductData[0].value;
+   obj["brand"]=ProductData[1].value;
+   obj["img"]=ProductData[2].value;
+   obj["price"]=ProductData[3].value;
+   obj["details"]=ProductData[4].value;
+   obj["category"]=ProductData[5].value;
+   
+    
+    if(obj["id"]==""||obj["brand"]==""||obj["img"]==""||obj["price"]==""||
+    obj["details"]==""||obj["category"]==""){
+    alert("Fill all detail")
+    }else{
+      
+      localdata.unshift(obj)
+      localStorage.setItem("addtofilter", JSON.stringify(localdata))
+      toDisplay(localdata) ;
+    }
+    document.querySelector(".open-button").style.display = "block";
+    location.reload();
+  }
+
+  if(localdata.length==0){
+    data()
+  }else{
+    toDisplay(localdata)
+  }
+
+</script>
