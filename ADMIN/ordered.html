@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+      table th {
+    color: rgb(11, 11, 11);
+    border: 1px solid rgb(7, 20, 68);
+    height: 70px;
+  }
+
+  table td {
+    border: 1px solid rgb(11, 11, 11);
+    background-color: aquamarine;
+  }
+
+  table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 90%;
+    margin: auto;
+    margin-top: 100px;
+    text-align: center;
+
+  }.add{
+    cursor: pointer;
+  }
+  h1{
+    text-align: center;
+  }
+</style>
+<body>
+
+   <h1>Order Details</h1>
+   
+   <button id="refresh">CLICK TO REFRESH</button>
+    <table>
+        <thead>
+          <tr>
+            <th>Product id</th>
+            <th>Brand</th>
+    
+            <th>Image</th>
+            <th>Price</th>
+            <th>Title</th>
+           
+            <th>In Stock</th>
+          </tr>
+        </thead>
+    
+        <tbody>
+          <!-- append it -->
+        </tbody>
+      </table>
+</body>
+</html>
+<script>
+     let cart=JSON.parse(localStorage.getItem("added_item"))
+console.log(cart);
+
+let body=document.querySelector("tbody");
+toDisplay();
+
+function toDisplay(arr) {
+    body.innerHTML = "";
+    cart.map(el => {
+      //console.log(el.brand)
+
+      let tr = document.createElement("tr");
+
+
+      let id = document.createElement("td");
+      id.innerText = el.id;
+      let brand = document.createElement("td")
+      brand.innerText = el.description;
+      let img = document.createElement("img");
+      img.setAttribute("src", el.img);
+      img.setAttribute("class", "image")
+      let price = document.createElement("td");
+      price.innerText = el.price;
+      let details = document.createElement("td")
+      details.innerText = el.title;
+    
+      let add = document.createElement("td");
+      add.innerHTML = "ON PROCESS";
+      add.setAttribute("class","add")
+      add.style.background = "red"
+      add.addEventListener("click", function () {
+        if(add.innerText=="ON PROCESS"){
+            add.innerText="Order Completed" 
+            add.style.background = "green"
+           
+        }else{
+            add.innerText="ON PROCESS"
+            add.style.background = "red"
+          
+        }
+      })
+      tr.append(id, brand, img, price, details, add);
+
+      body.append(tr);
+   });
+  }
+
+document.getElementById("refresh").addEventListener("click",()=>{
+window.location.reload();
+})
+</script>

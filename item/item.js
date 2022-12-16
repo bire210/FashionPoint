@@ -5,7 +5,6 @@ function data_fetch(productURL){
     .then((res)=>res.json())
     .then((data)=>{
         display(data);
-       console.log(data)
        bag=data;
     })
     .catch((err)=>console.log(err))  
@@ -17,8 +16,12 @@ function display(array){
         let img=document.createElement("img");
         img.setAttribute("src",element.images[1]);
         img.addEventListener("click",function(){
+
            
             add_product(element.id,element);
+
+            
+
             window.location.href="product.html?id="+element.id;
         })
         let title=document.createElement("h4");
@@ -30,7 +33,7 @@ function display(array){
         let btn=document.createElement("button");
         btn.innerText="Add to Cart";
         btn.addEventListener("click",function(){
-            alert("Item added to liked items");
+            alert("Item added to cart...");
             add_data("added_item",element);
         })
         div.append(img,title,price,btn,desc);
@@ -104,8 +107,8 @@ function submit(){
 }
 function search() {
     let value = document.querySelector("input").value;
-    let filterdata = data.filter(function (element) {
-        return element.name.toLowerCase().includes(value.toLocaleLowerCase());
+    let filterdata = bag.filter(function (element) {
+        return element.title.toLowerCase().includes(value.toLocaleLowerCase());
     })
     display(filterdata);
 }
