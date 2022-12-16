@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background:linear-gradient(to right,rgb(159, 135, 135), rgb(169, 232, 215),rgb(161, 127, 164));
+    }
+    form{
+        background-color:black;
+        color:white;
+      width: 32%;
+      border-radius: 20px;
+      margin: auto;
+      padding: 15px;
+      padding-left: 25px;
+      padding-right: 25px;
+      margin-top: 30px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }h2,p,h4,h1{
+      text-align: center;
+    }
+    input{
+      width: 95%;
+      border-radius: 5px;
+      margin-top: 6px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(167, 153, 153, 0.619);
+      font-size: 20px;
+      padding: 10px;
+     
+     
+    }.button{
+        position: relative;
+      margin-bottom: 6.5px;
+      border-radius:50px;
+      background-color: black;
+      color: white;
+      border:0px;
+    }::placeholder{
+      opacity: 0.4;
+      font-size: 17px;
+    }.logo{
+      margin-left: 700px;
+    }p,h4{
+      color: gray;
+    }h2{
+      margin-bottom: 40px;
+    }
+    h1{
+        margin-top: 100px;
+    }.outer{
+        border-radius:50px;
+        text-align: center;
+        width: 50%;
+        margin-left: 120px;
+        
+    }
+    
+    .outer:hover{
+        margin-left: 120px;
+        background:linear-gradient(#14ffe9,#ffeb3b,#ff00e0);
+        border-radius:50px;
+        text-align: center;
+        width: 50%;
+        animation: rotate 1.5s linear infinite;
+    }
+     @keyframes rotate {
+        0%{
+            filter: hue-rotate(0deg);
+        }
+        100%{
+            filter: hue-rotate(360deg);
+        }
+     }
+    .container label{
+      font-size: 25px;
+    }
+
+
+        </style>
+<body>
+    <div><h1>ADMIN SIGN-UP</h1>
+    </div>
+    <div>
+        <form action="" class="container">
+            <label for="">Enter email</label>
+            <br>
+            <input type="email" id="mail" placeholder="Enter your full name" required>
+            <br>
+            <label for="">Enter password</label>
+            <br>
+            <input type="password" id="password" placeholder="Enter your full name" required>
+            <br>
+            <div class="outer">
+            <input class="button" type="submit" value="Sign in">
+        </div>
+        </form>
+    </div>
+</body>
+</html>
+<script>
+
+
+let email=document.getElementById("mail");
+let password=document.getElementById("password")
+document.querySelector("form").addEventListener("submit",(event)=>{
+event.preventDefault();
+ 
+if(email.value=="" ||password.value==""){
+  alert("Please fill all credentials")
+}
+else if(email.value=="admin@gmail.com"||password.value==12345){
+    alert("SIGNED In SUCCESSFULLY");
+    window.location.href="fetch.html"
+}
+});
+
+
+</script>
