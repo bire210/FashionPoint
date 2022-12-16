@@ -1,19 +1,15 @@
-    let data = JSON.parse(localStorage.getItem("add_data"));
-    function search() {
-        let value = document.querySelector("input").value;
-        let filterdata = data.filter(function (element) {
-            return element.name.toLowerCase().includes(value.toLocaleLowerCase());
-        })
-        display_data(filterdata);
-    }
+    let data = JSON.parse(localStorage.getItem("added_item"));
+    console.log(data);
     function display_data(array) {
         document.querySelector("#product").innerHTML = "";
         array.forEach((element, index) => {
             let div = document.createElement("div");
             let img = document.createElement("img");
-            img.setAttribute("src", element.avatar);
+            img.setAttribute("src", element.images[0]);
+            let title = document.createElement("h5");
+            title.innerText = element.title;
             let details = document.createElement("h5");
-            details.innerText = element.name;
+            details.innerText = element.description;
             let price = document.createElement("h1");
             price.innerText = "$" + element.price;
             let button = document.createElement("button");
@@ -21,7 +17,7 @@
             button.addEventListener("click", function () {
                 delete_data(data, index);
             })
-            div.append(img, details, price, button);
+            div.append(img, title, price, button);
             document.querySelector("#product").append(div);
             document.querySelector("#h2").innerText = "Total number of items are " + (array.length);
             let res = data.reduce((acc, element) => {
@@ -44,7 +40,7 @@
         });
     }
     document.querySelector("#btn").addEventListener("click",function(){
-            alert("Order Placed");
+            window.location.href="placeorder.html"
            }) 
     function delete_data(data, index) {
         data.splice(index, 1);
