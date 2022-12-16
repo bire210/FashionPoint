@@ -16,7 +16,12 @@ function display(array){
         let img=document.createElement("img");
         img.setAttribute("src",element.images[1]);
         img.addEventListener("click",function(){
-            add_product(element.id,element)
+
+           
+            add_product(element.id,element);
+
+            
+
             window.location.href="product.html?id="+element.id;
         })
         let title=document.createElement("h4");
@@ -109,11 +114,12 @@ function search() {
 }
 function add_data(key,values){
     let new_data=JSON.parse(localStorage.getItem(key))||[];
-    new_data.push(values);
+   new_data.push(values);
+   //new_data[key]=values;
     localStorage.setItem(key,JSON.stringify(new_data));
 }
 function add_product(key,values){
-    let new_data=JSON.parse(localStorage.getItem(key))||[];
-    new_data.push(values);
+    let new_data=JSON.parse(localStorage.getItem(key))||{};
+    new_data[key]=values;
     localStorage.setItem(key,JSON.stringify(new_data));
 }
