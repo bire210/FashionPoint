@@ -17,6 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Economica&family=Neonderthaw&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Economica&family=Neonderthaw&family=Tapestry&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="loginlogout.css">
 </head>
 
 <body>
@@ -475,6 +476,117 @@
     </div>
 
   </div>
+
+<!-- POP up login page -->
+
+<div class="PopUp">
+  <div class="closebutton">X</div>
+  <form action="">
+<div class="form">
+  <p class="big">Sign IN</p>
+  <hr>
+  <p>Sign in so you can save items to your wishlists, track your orders, and check out faster!</p>
+  <div class="form-element"></div>
+  <label for="">Email*</label>
+  <br>
+  <input type="email" id="email" placeholder="Enter email" required>
+</div>
+<input type="checkbox">
+<label for="">keep me signed in <span class="animate"><button class="hov">i</button></span></label>
+
+
+<button class="submit">NEXT</button>
+
+<button class="mobilenumber">
+  <a href="">USE MOBILE NUMBER INSTEAD</a>
+  </button>
+<hr>
+<p class="big">Sign UP</p>
+<p>Welcome! It's quick and easy to set up an account</p>
+<button class="create_accnt">
+  <a href="">Create An Account</a>
+</button>
+
+</form>
+</div>
+
+
+
+
+<div class="check">
+<div class="closebutton">X</div>
+<form action="">
+<div class="form">
+<p class="big">Sign IN</p>
+<hr>
+<p>Sign in so you can save items to your wishlists, track your orders, and check out faster!</p>
+<div class="form-element"></div>
+<label for="">MOBILE NUMBER*</label>
+<br>
+<input type="number" id="number" placeholder="Enter Mobile" required>
+</div>
+<input type="checkbox">
+<label for="">keep me signed in <span class="animate"><button class="hov">i</button></span></label>
+
+<div>
+<button class="submit">NEXT</button>
+</div>
+<button class="EmailIDUSE">
+<a href="">SIGN UP WITH EMAIL INSTEAD</a>
+</button>
+
+<p>Landlines, VoIP, and prepaid phones are not supported. Standard message & data rates may apply. 
+  Message frequency may vary. Reply HELP for help, and STOP to cancel.</p>
+
+<hr>
+<p class="big">Sign UP</p>
+<p>Welcome! It's quick and easy to set up an account</p>
+<button class="create_accnt">
+<a href="">Create An Account</a>
+</button>
+
+</form>
+</div>
+
+
+<div class="Signup">
+<div class="closebutton">X</div>
+<form action="">
+<div class="form">
+<p class="big">Create An Account</p>
+<hr>
+<p>Welcome to Anthropologie! It's quick and easy to set up an account.</p>
+<div class="form-element"></div>
+<label for="">Email*</label>
+<br>
+<input type="email" id="email1" placeholder="Enter Email"  required>
+<label for="">MOBILE NUMBER*</label>
+<br>
+<input type="number" id="numb" placeholder="Enter Mobile" min="10" max="10" required>
+</div>
+<input type="checkbox">
+<label for="">keep me signed in <span class="animate"><button class="hov">i</button></span></label>
+
+<div>
+<button class="submit">NEXT</button>
+</div>
+<input type="checkbox">
+<label style="font-size:12px;line-height: 2px;" for="">Sign me up to receive Anthropologie offers, promotions and other commercial messages. By creating an account, I agree to Anthropologie's Terms of Service and Privacy Policy. I may unsubscribe at any time. Creating an account will not enroll you in SMS marketing.</label>
+<p style="font-size:12px;line-height:20px;">By creating an account, you agree to Anthropologie's <a href="">terms of use</a> and privacy policy. 
+Landlines, VoIP, and prepaid phones are not supported. Standard message & data rates may apply.
+Message frequency may vary. Reply HELP for help, and STOP to cancel. Contact us for more information.</p>
+<hr>
+<p class="big">Already Have An Account</p>
+<button class="signinone">
+<a href="">SIGN IN</a>
+</button>
+
+</form>
+</div>
+
+
+
+
 </body>
 
 </html>
@@ -533,6 +645,100 @@ document.getElementById('Beauty').addEventListener('mouseleave',()=>{
 })
 document.getElementById("res").addEventListener("click",()=>{
 })
+
+
+
+
+document.querySelector(".LOGIN").addEventListener("click",function (el){
+  el.preventDefault()
+  document.querySelector(".PopUp").classList.add("active")
+ })
+ document.querySelector(".PopUp .closebutton").addEventListener("click",function (el){
+  el.preventDefault()
+  document.querySelector(".PopUp").classList.remove("active")
+ })
+ 
+ document.querySelector(".mobilenumber").addEventListener("click",function (el){
+  el.preventDefault()
+  document.querySelector(".PopUp").classList.remove("active")
+  document.querySelector(".check").classList.add("active")
+ })
+
+ document.querySelector(".EmailIDUSE").addEventListener("click",function (el){
+  el.preventDefault()
+  document.querySelector(".check").classList.remove("active")
+  document.querySelector(".LOGIN").classList.add("active")
+  
+ })
+ document.querySelector(".check .closebutton").addEventListener("click",function (el){
+  el.preventDefault()
+  document.querySelector(".check").classList.remove("active")
+ })
+ 
+
+ 
+ document.querySelector(".create_accnt").addEventListener("click",function (el){
+  el.preventDefault()
+  document.querySelector(".LOGIN").classList.remove("active");
+  document.querySelector(".check").classList.remove("active");
+  document.querySelector(".Signup").classList.add("active");
+
+  
+ })
+ document.querySelector(".Signup .closebutton").addEventListener("click",function (el){
+  el.preventDefault()
+  
+  document.querySelector(".Signup").classList.remove("active");
+
+  })
+
+
+   
+ document.querySelector(".Signup .signinone").addEventListener("click",function (el){
+  el.preventDefault()
+ 
+  document.querySelector(".check").classList.remove("active");
+  document.querySelector(".Signup").classList.remove("active");
+ document.querySelector(".LOGIN").classList.add("active");
+  
+ })
+
+ document.querySelector(".check .create_accnt").addEventListener("click",function (el){
+  el.preventDefault()
+  document.querySelector(".LOGIN").classList.remove("active");
+  document.querySelector(".check").classList.remove("active");
+  document.querySelector(".Signup").classList.add("active");
+
+  
+ })
+ 
+//click part POPUP 1st
+
+
+let k=document.querySelector("#email1");
+      let p=document.querySelector("#numb");
+ document.querySelector(".Signup .submit").addEventListener("click",function(event){
+  event.preventDefault()
+     
+      console.log(p.value)
+let email=k.value;
+let number=p.value;
+      let obj={
+       email,
+       number
+      }
+      if(obj.email && obj.number){
+      let setdata=JSON.parse(localStorage.getItem("SignUPDATA"))||[];
+  setdata.push(obj);
+  localStorage.setItem("SignUPDATA",JSON.stringify(setdata));
+  alert("Signin-SUccessfull")
+      }
+      
+ })
+
+
+
+
 
 </script>
   
