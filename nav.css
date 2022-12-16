@@ -217,6 +217,13 @@ display: none;
 }
 }
 #responsLogin{
- background-color: blueviolet;
- display: none;
-}
+    background-color:white;
+    display: none;
+    position: absolute;
+    margin-left: 65%;
+    padding: 30px;
+    margin-top: -13%;
+    padding-right: 100px;
+  }
+ 
+ 
