@@ -60,8 +60,9 @@
     color: #0087ca;
 }
 
-.hover-underline img {
-    height: 20px;
+ #location ,#email{
+    height: 25px;
+    width: 25px;
     margin-top: 2px;
 }
 

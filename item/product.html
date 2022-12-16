@@ -1,43 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        #container{
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-        }
-        #mainpic img{
-            width: 50%;
-        }
-    </style>
-</head>
-<body>
-    <div id="container">
-        <div id="pics">
-          <div id="1">
-            <img src="https://images.urbndata.com/is/image/Anthropologie/4123583310007_031_b?$a15-pdp-detail-shot$&fit=constrain&qlt=80&wid=100" alt="">
-          </div>
-          <div id="2">
-            <img src="https://images.urbndata.com/is/image/Anthropologie/4123583310007_031_b?$a15-pdp-detail-shot$&fit=constrain&qlt=80&wid=100" alt="">
-          </div>
-          <div id="3">
-            <img src="https://images.urbndata.com/is/image/Anthropologie/4123583310007_031_b?$a15-pdp-detail-shot$&fit=constrain&qlt=80&wid=100" alt="">
-          </div>
-        </div>
-        <div id="mainpic">
-        <img src="https://images.urbndata.com/is/image/Anthropologie/4123583310007_031_b?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=640" alt="">  
-        </div>
-        <div id="deatails">
-          
-        </div>
-    </div>
-</body>
-</html>
-<script src="product.js">
 
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #container {
+      display: flex;
+      
+    }
+    #mainpic{
+      margin-top: 40px;
+      width: 50%;
+     
+    }
+    #mainpic img{
+     height: 100%;
+      width: 100%;
+    }
+    #img1,#img3,#img2{
+     
+      margin-top: 30px;
+      width: 30%;
+      margin-left: 40%; 
+    }
+
+    #img1 img,#img2 img,#img3 img{
+      width: 100%;
+     
+      
+    }
+    #deatails{
+     
+      width: 30%;
+       padding: 1%; 
+       padding-top: 10%;
+    }
+    #deatails button{
+      font-size: 30px;
+       
+       background-color: goldenrod;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <div id="pics">
+      <div id="img1">
+      </div>
+      <div id="img2">
+      </div>
+      <div id="img3">
+      </div>
+    </div>
+    <div id="mainpic">
+
+    </div>
+    <div id="deatails">
+     
+    </div>
+  </div>
+</body>
+
+</html>
+<script>
+
+  let params = new URLSearchParams(document.location.search);
+  let id = params.get("id");
+  console.log(id);
+  let product_detail = JSON.parse(localStorage.getItem(id));
+  let product = (product_detail[id]);
+  console.log(product)
+  let product_images=product.images;
+ 
+
+  let category = product.category;
+  
+  let mainPic = category.image;
+ 
+  let mainpic = document.querySelector("#mainpic");
+  let mainimage = document.createElement("img");
+  mainimage.src = mainPic;
+  mainpic.append(mainimage)
+
+  let divforimage1=document.querySelector("#img1");
+  let image1=document.createElement("img");
+  image1.src=product_images[0];
+  divforimage1.append(image1)
+  let divforimage12=document.querySelector("#img2");
+  let image2=document.createElement("img");
+  image2.src=product_images[1];
+  divforimage12.append(image2)
+  let divforimage13=document.querySelector("#img3");
+
+  let image3=document.createElement("img");
+  image3.src=product_images[2];
+  divforimage13.append(image3)
+
+
+
+  let deatails=document.querySelector("#deatails");
+  let titleName=document.createElement("h3");
+  titleName.innerText="Title : "+product.title;
+  let price=document.createElement("h2");
+  price.innerText="Price : RS "+product.price;
+  let Available=document.createElement("h3");
+  Available.innerText="Avaiblity :"+"availble"
+  let addCart=document.createElement("button");
+  addCart.innerText="Add to Cart";
+  addCart.addEventListener("click",add_data);
+  function add_data(){
+    
+    let add_product = JSON.parse(localStorage.getItem("added_item"))||[];
+    add_product.push(product);
+    localStorage.setItem("added_item",JSON.stringify(add_product));
+    alert("addeded");
+    window.location.href="item.html";
+    console.log(add_product)
+  }
+
+  deatails.append(titleName,price,Available,addCart)
 </script>
