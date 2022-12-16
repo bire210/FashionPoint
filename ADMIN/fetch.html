@@ -104,6 +104,16 @@
     width: 100%;
     margin-bottom: 10px;
     opacity: 0.8;
+  }.openodered{
+    background-color: #555;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    margin-top: 10px;
+    margin-left: 45%;
+
   }
 </style>
 
@@ -119,7 +129,10 @@
     </select>
   </div>
   <div id="additem">
+    <div class="buttons">
     <button class="open-button" onclick="openForm()">Add New Item</button>
+    <button class="openodered">CHECK ORDERED LIST</button>
+  </div>
 
     <div class="form-popup" id="myForm">
       <form action="" class="form-container">
@@ -302,5 +315,10 @@
   }else{
     toDisplay(localdata)
   }
+
+
+document.querySelector(".openodered").addEventListener("click",()=>{
+window.location.href="ordered.html";
+})
 
 </script>
