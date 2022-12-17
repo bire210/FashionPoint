@@ -642,7 +642,7 @@ document.querySelector(".LOGIN").addEventListener("click",function (el){
  document.querySelector(".EmailIDUSE").addEventListener("click",function (el){
   el.preventDefault()
   document.querySelector(".check").classList.remove("active")
-  document.querySelector(".LOGIN").classList.add("active")
+  document.querySelector(".PopUp").classList.add("active")
   
  })
  document.querySelector(".check .closebutton").addEventListener("click",function (el){
@@ -654,7 +654,7 @@ document.querySelector(".LOGIN").addEventListener("click",function (el){
  
  document.querySelector(".create_accnt").addEventListener("click",function (el){
   el.preventDefault()
-  document.querySelector(".LOGIN").classList.remove("active");
+  document.querySelector(".PopUp").classList.remove("active");
   document.querySelector(".check").classList.remove("active");
   document.querySelector(".Signup").classList.add("active");
 
@@ -674,13 +674,13 @@ document.querySelector(".LOGIN").addEventListener("click",function (el){
  
   document.querySelector(".check").classList.remove("active");
   document.querySelector(".Signup").classList.remove("active");
- document.querySelector(".LOGIN").classList.add("active");
+ document.querySelector(".PopUp").classList.add("active");
   
  })
 
  document.querySelector(".check .create_accnt").addEventListener("click",function (el){
   el.preventDefault()
-  document.querySelector(".LOGIN").classList.remove("active");
+  document.querySelector(".PopUp").classList.remove("active");
   document.querySelector(".check").classList.remove("active");
   document.querySelector(".Signup").classList.add("active");
 
@@ -711,8 +711,54 @@ let number=p.value;
       
  })
 
+ let getmaindata=JSON.parse(localStorage.getItem("SignUPDATA"))
+let email=document.getElementById("email")
+document.querySelector(".PopUp .submit").addEventListener("click",function(event){
+  event.preventDefault()
+
+  getmaindata.forEach(element => {
+
+    if(element.email==email.value){
+      flag=true;
+      
+     
+
+    }
+  }) 
+    if(flag==true){
+      alert("SIGN IN SUCCESSFULL");
+      window.location.href="index.html"
+    }
+    else{
+      alert("Please Provide Valid Credentials")
+    };
+
+  })
 
 
+let flag2=false
+let phno=document.getElementById("number")
+document.querySelector(".check .submit").addEventListener("click",function(event){
+  event.preventDefault()
+
+  getmaindata.forEach(element => {
+
+    if(element.number==phno.value){
+      flag2=true;
+      
+     
+
+    }
+  }) 
+    if(flag2==true){
+      alert("SIGN IN SUCCESSFULL");
+      window.location.href="index.html"
+    }
+    else{
+      alert("Please Provide Valid Credentials")
+    };
+
+  })
 
 
 </script>
