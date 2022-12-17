@@ -1,5 +1,5 @@
     let data = JSON.parse(localStorage.getItem("added_item"));
-    console.log(data);
+    //console.log(data);
     function display_data(array) {
         document.querySelector("#product").innerHTML = "";
         array.forEach((element, index) => {
@@ -44,7 +44,7 @@
            }) 
     function delete_data(data, index) {
         data.splice(index, 1);
-        localStorage.setItem("cart_item", JSON.stringify(data));
+        localStorage.setItem("added_item", JSON.stringify(data));
         display_data(data);
     }
     display_data(data);

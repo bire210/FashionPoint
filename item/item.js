@@ -35,6 +35,7 @@ function display(array){
         btn.addEventListener("click",function(){
             alert("Item added to cart...");
             add_data("added_item",element);
+            window.location.href="item.html"
         })
         div.append(img,title,price,btn,desc);
         document.getElementById("container").append(div);
@@ -123,3 +124,12 @@ function add_product(key,values){
     new_data[key]=values;
     localStorage.setItem(key,JSON.stringify(new_data));
 }
+
+let totalCartItem=JSON.parse(localStorage.getItem("added_item"))||[];
+let a=(totalCartItem.length);
+
+let Cart=document.querySelector(".Cart_item a");
+Cart.innerText="cart"+a;
+
+
+
