@@ -87,8 +87,10 @@
     </style>
 </head>
 <body>
+    <!-- <a href="upi.html"><h3>Pay v UPI </h3></a> -->
     <div class="container">
         <form action="">
+            <a href="upi.html"><h3 style="text-align: center;">Pay via UPI</h3></a>
              <div class="row">
                 <div class="col">
                     <h3 class="title">Billing Address</h3>
@@ -145,8 +147,14 @@
                     </div>
                 </div>
              </div>
-             <input type="submit" value="Proceed yo checkout" class="submit">
+             <input type="submit" value="Proceed to checkout" class="submit">
         </form>
     </div>
+    <script>
+        document.querySelector("form").addEventListener("submit",()=>{
+              alert("Order Placed... thankyou for shopping");
+              window.location.href="item.html";
+        });
+      </script>
 </body>
 </html>
