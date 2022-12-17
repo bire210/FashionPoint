@@ -373,4 +373,21 @@ let number=p.value;
       }  
  })
 
+ let getmaindata=JSON.parse(localStorage.getItem("SignUPDATA"))
+let email=document.getElementById("email")
+document.querySelector(".PopUp .submit").addEventListener("click",function(event){
+  event.preventDefault()
+
+  getmaindata.forEach(element => {
+    if(element.email==email.value){
+      alert("SIGN IN SUCCESSFULL")
+
+    }else{
+      alert("Please Provide Valid Credentials")
+    }
+  });
+
+
+
+})
 </script>
