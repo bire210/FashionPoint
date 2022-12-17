@@ -82,5 +82,4 @@ document.getElementById("res").addEventListener("click",()=>{
   }else{
     Menu.style.display="none"
   }
-  
 })
