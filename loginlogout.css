@@ -35,7 +35,7 @@ transform: translate(-50%,-50%) scale(1);
              transform 20ms ease-in-out 00ms; */
 
 }
-p{
+.form p{
   text-align: center;
   margin-top: 20px;
   margin-bottom: 15px;

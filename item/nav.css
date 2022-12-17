@@ -40,7 +40,7 @@ cursor:pointer;
 }
 .main-child{
 display: flex;
-width: 105%;
+/* width: 105%; */
 justify-content:space-between;
 /* padding: 10px 0px; */
 }
@@ -123,3 +123,110 @@ position: absolute;
 width: 300px;
 background-color: white;
 }
+/* #############################---------Responsibness-_______________########### */
+#hover-div1{
+    display: flex;
+    width: 200%;
+    padding-left: 5%;
+   }
+   #hover-div1 img{
+        width: 80%;
+        height: 100%;
+    }
+   #hover-main1{
+    display: none;
+    position:absolute;
+    background-color: white;
+     margin-left: 5%;
+   }
+   #hover-div2{
+    display: flex;
+    width: 200%;
+    padding-left: 5%;
+   }
+   #hover-div2 img{
+        width: 80%;
+        height: 100%;
+    }
+   #hover-main2{
+    display: none;
+    position:absolute;
+    background-color: white;
+     margin-left: 30%;
+   }
+   #div-child, #div-child-1,#div-child-2{
+    display: flex;
+    width: 120%;
+    justify-content: space-between;
+   }
+   #hover-2,#hover-3,#hover-4{
+    display: none;
+    position: absolute;
+    background-color: beige;
+    margin-left: 10%;
+    padding: 0px 10px;
+   }
+   #hover-2 img,#hover-3 img{
+    width: 80%;
+        height: 100%;
+   }
+   #hover-4 img{
+width: 40%;
+height: 100%;
+   }
+   #third-Chiild_1:nth-child(1){
+    text-decoration: none;
+   }
+/* _______________resposibness____________ */
+#res{
+    display:none;
+}
+@media all and (min-width:1001px) and (max-width: 1300px){
+    .language{
+padding: 0 50px;
+    }
+}
+
+@media all and (min-width: 601px) and (max-width: 1000px) {
+    .language,.LOGIN{
+display: none;
+    }
+    #res{
+    display:block;
+}
+.main-child{
+    flex-direction: column;
+}
+#Last-div{
+    display: none;
+}
+}
+
+@media all and (min-width: 200px) and (max-width: 600px) {
+    .child_main{
+        flex-direction: column;
+    }
+    .language,.LOGIN{
+display: none;
+    }
+    #res{
+    display:block;
+}
+.main-child{
+    flex-direction: column;
+}
+#Last-div{
+    display: none;
+}
+}
+#responsLogin{
+    background-color:white;
+    display: none;
+    position: absolute;
+    margin-left: 65%;
+    padding: 30px;
+    margin-top: -13%;
+    padding-right: 100px;
+  }
+ 
+ 
