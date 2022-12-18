@@ -118,6 +118,13 @@ transform: translate(-50%,-50%) scale(1);
   width: 100%;
   margin-bottom: 20px;
   color: gray;
+}#number{
+  width: 85%;
+  padding: 12px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 20px;
+  color: gray;
 }
 .EmailIDUSE{
   width: 100%;
@@ -160,4 +167,8 @@ transform: translate(-50%,-50%) scale(1);
   width: 100%;
   margin-bottom: 20px;
   color: gray;
+}
+.big{
+  text-align: center;
+  padding-bottom: 20px;
 }
