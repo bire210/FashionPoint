@@ -712,12 +712,13 @@ let number=p.value;
  })
 
  let getmaindata=JSON.parse(localStorage.getItem("SignUPDATA"))
+ console.log(getmaindata)
 let email=document.getElementById("email")
 document.querySelector(".PopUp .submit").addEventListener("click",function(event){
   event.preventDefault()
 
   getmaindata.forEach(element => {
-
+console.log(element)
     if(element.email==email.value){
       flag=true;
       
